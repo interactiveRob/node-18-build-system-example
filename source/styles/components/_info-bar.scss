@@ -1,0 +1,52 @@
+.c-info-bar {
+    @include card;
+    margin-top: 4rem;
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm) {
+        flex-flow: row nowrap;
+    }
+
+    &__icon {
+        display: inline-block;
+        height: 4.5rem;
+        width: auto;
+        color: c(white);
+    }
+
+    &__heading {
+        padding: 2rem 1rem;
+        display: flex;
+        width: 100%;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: c(darkBlue);
+        text-align: center;
+
+        @include media-breakpoint-up(sm) {
+            width: 50%;
+            max-width: 260px;
+        }
+    }
+
+    &__headline {
+        display: block;
+        width: 100%;
+        margin-top: 0.7rem;
+        @extend .heading-h4;
+        color: c(white);
+    }
+
+    &__content {
+        padding: 2rem;
+
+        @include media-breakpoint-up(sm) {
+            width: 100%;
+            padding: 3rem 3.7rem;
+        }
+    }
+}

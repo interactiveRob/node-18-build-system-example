@@ -1,0 +1,59 @@
+@mixin section-heading {
+    font-size: 4.2rem;
+    font-weight: weight(black);
+    color: c(darkBlue);
+    line-height: 1.2;
+
+    @include media(">=768px") {
+        font-size: 4.8rem;
+    }
+}
+
+@mixin body-text {
+    font-size: 1.6rem;
+    font-weight: weight(regular);
+    color: c(reading);
+    line-height: 1.55;
+
+    @include media(">=768px") {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin text-link {
+    color: c(blue);
+    font-weight: weight(bold);
+    display: inline;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+
+    @include mobile-hover {
+        color: c(primary);
+    }
+}
+
+@mixin text-link-dark() {
+    color: c(darkBlue);
+    font-weight: weight(bold);
+    display: inline;
+    text-decoration: none;
+
+    @include mobile-hover {
+        text-decoration: underline;
+        color: c(blue);
+    }
+}
+
+@mixin block-link {
+    display: block;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: c(blue);
+    font-weight: weight(bold);
+    transition: animate(300);
+
+    @include mobile-hover {
+        text-decoration: underline;
+        color: c(darkBlue);
+    }
+}

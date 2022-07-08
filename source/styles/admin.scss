@@ -1,0 +1,17 @@
+/*———— -Settings- ————*/
+@import "settings";
+@import "generic/fonts";
+
+/*———— -Libraries- ————*/
+@import "libraries/include_media";
+@import "custom-bootstrap/includes";
+
+.editor-styles-wrapper {
+    /*———— -Tools- ————*/
+    @import "tools/functions/calculations";
+    @import "tools/mixins";
+
+    /*———— -Global Styles- ————*/
+    @import "elements/editor";
+    @import "elements/buttons";
+}

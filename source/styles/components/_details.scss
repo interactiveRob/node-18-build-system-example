@@ -1,0 +1,27 @@
+.c-details {
+    $block: &;
+
+    margin-bottom: 4rem;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 5rem;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__button {
+        margin-top: 4rem;
+    }
+
+    &__link {
+        margin-top: 2rem;
+
+        a {
+            @include text-link-dark;
+
+            margin-right: 2rem;
+        }
+    }
+}

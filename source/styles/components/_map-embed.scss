@@ -1,0 +1,8 @@
+.c-map-embed {
+    margin-top: 2.5rem;
+    position: relative;
+    padding-bottom: 78.2%;
+    &__iframe {
+        @include absolute-cover;
+    }
+}

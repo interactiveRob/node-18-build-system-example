@@ -1,0 +1,40 @@
+.cu-breadcrumbs {
+    background-color: transparent;
+    margin-bottom: -4.5rem;
+    padding: 4rem 0 0 0;
+    border-radius: 0;
+    font-size: 1.6rem;
+
+    &.is-page-breadcrumb {
+        background-color: c(light-gray);
+        padding-bottom: 1.7rem;
+    }
+
+    .breadcrumb-item {
+        a {
+            color: c(navy);
+            font-weight: weight(bold);
+
+            @include mobile-hover {
+                color: c(blue);
+            }
+        }
+
+        &.active {
+            color: c(reading);
+        }
+    }
+
+    &__separator {
+        position: relative;
+        top: 2px;
+        margin: 0 1rem;
+
+        svg {
+            display: inline-block;
+            color: c(blue);
+            width: 0.62rem;
+            height: 1.5rem;
+        }
+    }
+}

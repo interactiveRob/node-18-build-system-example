@@ -1,0 +1,3 @@
+@function container($width) {
+    @return ($width) * 1px + $edge_padding * 2;
+}

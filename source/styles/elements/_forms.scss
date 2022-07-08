@@ -1,0 +1,149 @@
+.form-ui {
+    display: flex;
+
+    .select {
+        position: relative;
+    }
+
+    select {
+        background: transparent;
+        // border: 0.2rem solid c(reading);
+        // border-radius: 0.2rem;
+        color: c(grey);
+        resize: none;
+        width: 100%;
+    }
+
+    label {
+        font-family: $mulish;
+        display: inline-block;
+        font-size: 1.4rem;
+        font-weight: weight(bold);
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+        -webkit-appearance: none;
+        color: c(reading);
+        padding: 0.8rem 1.4rem;
+        background: transparent;
+        font-family: $mulish;
+        font-size: 1.6rem;
+        background-color: #efefef;
+        border: 1px solid c(medium-gray);
+        border-radius: 0.2rem;
+        resize: none;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include placeholder(true) {
+            padding-left: 1rem;
+            color: c(reading);
+            opacity: 0.6;
+        }
+    }
+
+    class input[type="submit"] {
+        margin-top: 1.8rem;
+    }
+
+    .select select {
+        border-radius: 0;
+        display: inline-block;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    select:after {
+        pointer-events: none;
+        border-bottom: 0.3rem solid c(reading);
+        border-right: 0.3rem solid c(reading);
+        border-radius: 0.3rem;
+        content: "";
+        height: 1.4rem;
+        position: absolute;
+        right: 2rem;
+        top: 0;
+        transform: rotate(45deg);
+        width: 1.4rem;
+    }
+
+    .select,
+    .styled-select {
+        // color: c(reading);
+        display: inline-block;
+        margin: 0 auto;
+        position: relative;
+        width: 100%;
+
+        &:after {
+            border-bottom: 0.2rem solid c(reading);
+            border-left: 0;
+            border-right: 0.2rem solid c(reading);
+            border-top: 0;
+            content: "";
+            display: inline-block;
+            height: 1rem;
+            pointer-events: none;
+            position: absolute;
+            right: 2.4rem;
+            top: 50%;
+            transform: rotate(45deg) translate(-50%, -50%);
+            width: 1rem;
+        }
+
+        & select {
+            // border-radius: 0;
+            // color: c(reading);
+            cursor: pointer;
+            margin: 0;
+            outline: 0;
+            padding: 1.7rem 6rem 1.6rem 2rem;
+            width: 100%;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+    }
+
+    @include media(">=768px") {
+        .half {
+            padding-right: 1.75rem;
+
+            & + .half {
+                padding-right: 0px;
+                padding-left: 1.75rem;
+            }
+        }
+    }
+
+    .ajax-loader {
+        display: block !important;
+        margin: 0.5rem auto 0 !important;
+
+        & + .ajax-loader {
+            display: none !important;
+        }
+    }
+
+    .row {
+        align-items: flex-start;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+
+        [class*="column"] {
+            position: relative;
+            margin-top: 1.8rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+}

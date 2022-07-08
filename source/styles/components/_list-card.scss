@@ -1,0 +1,35 @@
+$padding: 2rem 2.5rem;
+
+.c-list-card {
+    display: block;
+    @include card;
+    text-align: left;
+
+    &__top {
+        background: linear-gradient(180deg, rgba(247, 249, 249, 0) 0%, #f7f9f9 100%);
+        padding: $padding;
+        padding-top: 2.5rem;
+    }
+
+    &__headline {
+        @extend .heading-h4;
+    }
+
+    &__bottom {
+        padding: $padding;
+    }
+
+    &__item {
+        color: c(blue);
+        font-size: 1.8rem;
+        font-weight: weight(bold);
+
+        & + & {
+            margin-top: 2rem;
+        }
+
+        a:hover {
+            color: c(darkBlue);
+        }
+    }
+}

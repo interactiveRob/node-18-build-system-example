@@ -1,0 +1,29 @@
+.layout-slider-dots {
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: -0.2rem;
+    transition: all ease 400ms;
+
+    .c-slider-dot {
+        position: relative;
+        background-color: c(medium-gray);
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0rem 0.2rem;
+        transition: background-color ease 400ms;
+        border-radius: 100%;
+
+        &.js-is-active {
+            background-color: c(blue);
+        }
+
+        &:not(.js-is-active) {
+            @include mobile-hover {
+                background-color: c(blue);
+            }
+        }
+    }
+}

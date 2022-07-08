@@ -1,0 +1,215 @@
+@use "sass:math";
+
+.cu-login-card {
+    $breakpoint: lg;
+
+    $padding-x: 2rem;
+    $padding-y: 2.4rem;
+    $padding-y-adjust: 3rem;
+
+    $padding-x-lg: 3.2rem;
+    $padding-x-lg-adjust: 4.2rem;
+    $padding-y-lg: 2rem;
+
+    $input-padding: 1.6rem;
+    $input-padding-lg: 1.8rem;
+
+    padding: 0 1rem;
+
+    @at-root {
+        &__container {
+            max-width: 942px;
+            margin: 0 auto;
+        }
+
+        &__card {
+            @include card;
+
+            background: c(white);
+            overflow: hidden;
+            border-radius: 1rem;
+
+            @include media-breakpoint-up($breakpoint) {
+                display: flex;
+            }
+        }
+
+        &__form {
+            padding: $padding-y $padding-x $padding-y-adjust;
+
+            @include media-breakpoint-up($breakpoint) {
+                order: 1;
+                flex: 1 1 auto;
+                padding: $padding-y-lg $padding-x-lg $padding-y-lg $padding-x-lg-adjust;
+            }
+        }
+
+        &__form-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            color: c(darkBlue);
+            margin-bottom: $padding-y;
+
+            @include media-breakpoint-up($breakpoint) {
+                font-size: 1.6rem;
+                text-align: left;
+                margin-bottom: 1.2rem;
+            }
+        }
+
+        &__form-fieldset {
+            padding: 0;
+            border: none;
+
+            @include media-breakpoint-up($breakpoint) {
+                display: flex;
+            }
+        }
+
+        &__form-field {
+            margin-bottom: 1.6rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include media-breakpoint-up($breakpoint) {
+                flex: 1 1 auto;
+                margin-right: 1.6rem;
+                margin-bottom: 0;
+
+                &:last-child {
+                    flex-shrink: 0;
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &__input {
+            $height: 4.5rem;
+
+            width: 100%;
+            height: $height;
+            padding: 0 $input-padding;
+            font-size: 1.9rem;
+            border: 2px solid c(medium-gray);
+            border-radius: math.div($height, 2);
+            margin-bottom: 1.1rem;
+            transition: border-color 0.2s;
+
+            &:hover,
+            &:focus {
+                border-color: c(blue);
+            }
+
+            @include media-breakpoint-up($breakpoint) {
+                $height: 4.8rem;
+
+                height: 4.8rem;
+                padding: 0 $input-padding-lg;
+                border-radius: math.div($height, 2);
+            }
+        }
+
+        &__link {
+            $goose: 2px;
+
+            display: block;
+            padding-left: calc(#{$input-padding} + #{$goose});
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.14285714;
+            text-align: left;
+            color: c(blue);
+
+            &:hover,
+            &:focus {
+                color: c(darkBlue);
+            }
+
+            @include media-breakpoint-up($breakpoint) {
+                $goose: 3px;
+
+                padding-left: calc(#{$input-padding-lg} + #{$goose});
+            }
+        }
+
+        &__submit {
+            width: 100%;
+
+            @include media-breakpoint-up($breakpoint) {
+                width: auto;
+            }
+        }
+
+        &__join {
+            $circle-dude-size: 3.6rem;
+            $circle-dude-goose: 2px;
+
+            position: relative;
+            z-index: 0;
+            background-color: c(darkBlue);
+            padding: $padding-y-adjust $padding-x $padding-y;
+            text-align: center;
+
+            // The little circle dude
+            &::after {
+                content: "OR";
+                display: flex;
+                position: absolute;
+                top: -#{math.div($circle-dude-size, 2)};
+                left: calc(50% - #{math.div($circle-dude-size, 2)});
+                width: $circle-dude-size;
+                height: $circle-dude-size;
+                padding-top: $circle-dude-goose;
+                justify-content: center;
+                align-items: center;
+                background-color: c(white);
+                font-size: 1.2rem;
+                font-weight: 700;
+                text-align: center;
+                color: c(darkBlue);
+                border-radius: 50%;
+            }
+
+            @include media-breakpoint-up($breakpoint) {
+                display: flex;
+                width: 26.2rem;
+                flex-shrink: 0;
+                align-items: center;
+                padding: $padding-y-lg $padding-x-lg-adjust $padding-y-lg $padding-x-lg;
+
+                &::after {
+                    top: auto;
+                    right: -#{math.div($circle-dude-size, 2)};
+                    left: auto;
+                }
+            }
+        }
+
+        &__join-graphic {
+            $width: 85%;
+
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            width: $width;
+            height: 100%;
+
+            [data-js="slide"] & {
+                width: $width;
+            }
+        }
+
+        &__join-button {
+            width: 100%;
+            white-space: nowrap;
+
+            @include media-breakpoint-up($breakpoint) {
+                width: auto;
+            }
+        }
+    }
+}

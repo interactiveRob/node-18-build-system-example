@@ -1,0 +1,44 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: $rem-base;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    color: c(reading);
+    font: {
+        family: $mulish;
+        size: 18px;
+        weight: weight(regular);
+    }
+    line-height: 1.55;
+    margin: 0;
+    text-align: left;
+}
+
+html,
+body {
+    max-width: 100%;
+    min-height: 100vh;
+    height: 100%;
+
+    &.scroll-lock {
+        overflow: hidden;
+    }
+}
+
+html.lock-scroll,
+body.lock-scroll {
+    overflow: hidden;
+}
+
+.skip-link {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+}

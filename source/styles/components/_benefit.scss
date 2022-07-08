@@ -1,0 +1,16 @@
+.c-benefit {
+    margin-bottom: 3.5rem;
+    @include media-breakpoint-up(md) {
+        padding-left: 2.2rem;
+        padding-right: 2.2rem;
+        margin-left: -2.2rem;
+    }
+    &__headline {
+        font-weight: weight(bold);
+        color: c(darkBlue);
+    }
+
+    &__descr {
+        margin-top: 1.5rem;
+    }
+}

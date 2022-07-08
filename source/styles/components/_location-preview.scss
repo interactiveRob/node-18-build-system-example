@@ -1,0 +1,13 @@
+.c-location-preview {
+    &__title {
+        color: c(blue);
+        transition: animate(300);
+    }
+    a {
+        @include mobile-hover {
+            .c-location-preview__title {
+                color: c(primary);
+            }
+        }
+    }
+}

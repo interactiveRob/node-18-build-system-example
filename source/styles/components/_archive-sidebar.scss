@@ -1,0 +1,9 @@
+.c-archive-sidebar {
+    &__region {
+        margin-bottom: 4rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

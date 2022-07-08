@@ -1,0 +1,28 @@
+*.log
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+# custom
+assets/*.js
+assets/*.css
+assets/*.map
+assets/manifest.json
+assets/*.txt
+
+## miscellaneous
+pipelines
+yarn.lock
+package-lock.json
+yarn-error.log
+node_modules
+manifest.json
+.bak
+.env
+
+/.user.ini
+/.Trash*
+.DS_Store
+.htpasswd

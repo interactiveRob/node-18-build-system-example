@@ -1,0 +1,15 @@
+.layout-location-listing {
+    &__flex {
+        display: grid;
+        width: 100%;
+        max-width: 84.5rem;
+        grid-gap: 3rem 0;
+
+        @include media(">=768px") {
+            grid-gap: 1.5rem 3rem;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(9, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

@@ -1,0 +1,131 @@
+.c-gallery {
+    position: relative;
+    max-width: 73.2rem;
+    padding: 1.6rem;
+    margin: 4rem auto 0;
+
+    &__container {
+        position: relative;
+        z-index: z(land);
+        padding: 0 0.5rem;
+
+        @include media(">=768px") {
+            padding: 0 2rem;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &.js-is-active {
+            position: relative;
+            opacity: 1;
+            z-index: z(hill);
+        }
+    }
+
+    &__image-wrap {
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            padding-bottom: 66.7%; //constrain proportion
+        }
+
+        img {
+            user-select: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__caption {
+        margin-top: 0.8rem;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: c(black);
+        br {
+            display: none;
+        }
+
+        > span {
+            font-size: 1.1rem;
+            color: #777777;
+            font-family: $fontBentonMedium;
+            font-weight: 400;
+            letter-spacing: 0.8px;
+        }
+    }
+
+    &__counter {
+        color: c(black);
+        font-size: 1.5rem;
+        font-family: $fontBentonBold;
+        font-weight: 400;
+
+        strong {
+            font-family: $fontBentonBold;
+            font-weight: 400;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        z-index: z(hill);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        pointer-events: none;
+        padding: 0 3rem;
+
+        @include media(">=768px") {
+            padding: 0 4.5rem;
+        }
+    }
+
+    &__arrow {
+        transition: animate(300);
+        color: var(--theme);
+        pointer-events: all;
+        appearance: none;
+        border: none;
+        cursor: pointer;
+        transform: translateY(-5%);
+
+        svg {
+            width: 3.2rem;
+            height: 3.2rem;
+
+            @include media(">=768px") {
+                width: 4.2rem;
+                height: 4.2rem;
+            }
+        }
+
+        &:active {
+            outline: none;
+        }
+
+        @include mobile-hover {
+            color: var(--theme-tint);
+        }
+
+        &.is-prev {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

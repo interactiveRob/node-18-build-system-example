@@ -1,0 +1,26 @@
+/* Ascending order is required for the $container-max-widths map.*/
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1180px,
+    xxl: 1181px,
+);
+
+$spacer: 1.6rem;
+
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+);
+
+$grid-gutter-width: 1.6rem;
+
+@import "bootstrap/scss/mixins/breakpoints";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/bootstrap-utilities";
+@import "bootstrap/scss/transitions";

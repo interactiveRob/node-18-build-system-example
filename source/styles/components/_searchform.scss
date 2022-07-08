@@ -1,0 +1,28 @@
+input[name="s"] {
+    &:focus {
+        outline: none;
+    }
+}
+
+.c-mobile-search {
+    @include pad-edges;
+
+    form {
+        display: flex;
+        flex-flow: row nowrap;
+        @include card;
+        background-color: c(white);
+        padding: 0 1.6rem;
+    }
+
+    input[name="s"] {
+        width: 100%;
+        height: 48px;
+        border-top-left-radius: 48px;
+        border-bottom-left-radius: 48px;
+    }
+
+    [type="submit"] {
+        color: c(blue);
+    }
+}

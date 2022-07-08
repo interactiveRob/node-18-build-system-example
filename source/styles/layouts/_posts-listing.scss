@@ -1,0 +1,26 @@
+.layout-posts-listing {
+    margin-top: 9rem;
+    margin-bottom: 10rem;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 11rem;
+    }
+
+    &__flush {
+        @include media-breakpoint-up(md) {
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+    }
+
+    &.is-ajax {
+        margin: 0;
+
+        .layout-posts-listing__flush {
+            @include media-breakpoint-up(md) {
+                margin-left: -1.8rem;
+                margin-right: -1.8rem;
+            }
+        }
+    }
+}

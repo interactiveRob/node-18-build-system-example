@@ -1,0 +1,57 @@
+.page-search-results {
+    margin-top: 3.5rem;
+}
+
+.layout-search-results {
+    margin: 0 auto;
+    max-width: 816px;
+
+    &__page-title {
+        font-size: 2.5rem;
+    }
+}
+
+.search-result-card {
+    margin-top: 3rem;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 3.5rem;
+    }
+
+    &__content {
+        margin-top: 2.5rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+            padding-left: 1rem;
+        }
+
+        a {
+            color: $black;
+        }
+    }
+
+    &__thumbnail {
+        background-color: c(darkBlue);
+        position: relative;
+        padding-bottom: 62.48%;
+        overflow: hidden;
+        img,
+        svg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .c-article-preview__graphic {
+        color: c(blue);
+        width: 21.6rem;
+        height: 31.85rem;
+    }
+}

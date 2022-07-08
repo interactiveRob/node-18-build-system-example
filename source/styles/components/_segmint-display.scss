@@ -1,0 +1,25 @@
+.c-segmint-display {
+}
+
+.media-612x306 {
+    display: none;
+}
+
+.media-320x316 {
+    display: none;
+}
+
+@media screen and (max-width: 675px) {
+    .media-185x555 {
+        display: none;
+    }
+    .media-612x306 {
+        display: block;
+    }
+    .media-320x316 {
+        display: block;
+    }
+    .media-1455x240 {
+        display: none;
+    }
+}

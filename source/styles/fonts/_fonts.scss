@@ -1,0 +1,22 @@
+/* The available types are: "woff", "woff2", "truetype", "opentype", "embedded-opentype", and "svg". */
+@font-face {
+    font-family: "Metropolis";
+    src: url("./fonts/Metropolis-Bold.woff") format("woff"), url("./fonts/Metropolis-Bold.otf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("./fonts/Metropolis-Regular.woff") format("woff"), url("./fonts/Metropolis-Regular.otf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Metropolis";
+    src: url("./fonts/Metropolis-SemiBold.woff") format("woff"),
+        url("./fonts/Metropolis-SemiBold.otf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}

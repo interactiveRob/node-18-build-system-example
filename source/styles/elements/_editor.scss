@@ -1,0 +1,272 @@
+@import "../mixins/shared-text-styles";
+
+* {
+    -webkit-font-smoothing: antialiased;
+    font-family: $mulish;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $mulish;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bolder;
+}
+
+.heading-h1 {
+    color: c(primary);
+    font-size: 48px;
+    line-height: 1.16;
+    font-weight: weight(black);
+}
+
+.heading-h2 {
+    color: c(primary);
+    font-size: 42px;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 48px;
+    }
+}
+
+.heading-h3 {
+    color: c(primary);
+    font-size: 32px;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 36px;
+    }
+}
+
+.heading-h4 {
+    color: c(primary);
+    font-size: 2px;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 24px;
+    }
+}
+
+.heading-h5 {
+    font-size: 18px;
+    font-weight: weight(black);
+}
+
+.heading-h6 {
+    font-size: 16px;
+    font-weight: weight(black);
+}
+
+p {
+    margin: 0;
+}
+
+pre {
+    font-family: $mulish;
+}
+
+.bg-dark-mode {
+    color: c(white);
+}
+
+blockquote {
+    margin: 0;
+}
+
+//rich text area styles
+a:not(.c-btn):not(.button):not(.ignore-link-style):not(.acf-icon) {
+    @include text-link;
+}
+
+h1 {
+    @extend .heading-h1;
+}
+
+h2 {
+    @extend .heading-h2;
+}
+
+h3 {
+    @extend .heading-h3;
+}
+
+h4 {
+    @extend .heading-h4;
+}
+
+h5 {
+    @extend .heading-h5;
+}
+
+h6 {
+    @extend .heading-h6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 17px;
+}
+
+* + p {
+    margin-top: 21px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:not(:first-child) {
+        margin-top: 35px;
+
+        @include media(">=1024px") {
+            margin-top: 44px;
+        }
+    }
+}
+
+p,
+ul,
+li {
+    font-size: 16px;
+    line-height: 1.5;
+
+    @include media(">=1024px") {
+        font-size: 18px;
+    }
+}
+
+blockquote {
+    margin: 4px 0;
+    padding-left: 4px;
+
+    a:active {
+        color: c(gray);
+    }
+
+    @include media(">=1024px") {
+        padding-left: 8px;
+
+        a:hover {
+            color: c(gray);
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 1.16px;
+        border-right: 08px solid c(primary);
+
+        @include media(">=1024px") {
+            left: 32px;
+        }
+    }
+
+    position: relative;
+}
+
+blockquote,
+blockquote p {
+    font-weight: weight(semi-bold);
+    color: c(primary);
+    font-size: 18px;
+    line-height: 2;
+    position: relative;
+    @include media(">=768px") {
+        font-size: 22px;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0 0 0 0;
+    margin-top: 2px;
+    margin-bottom: -1px;
+
+    li.wp-block-list {
+        display: block;
+        width: 100%;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        padding-bottom: 14px;
+        position: relative;
+
+        &:before {
+            content: "";
+            color: c(reading);
+            display: inline-block;
+            margin-right: 08px;
+            margin-left: -02px;
+            height: 10px;
+        }
+    }
+}
+
+ul {
+    li.wp-block-list {
+        &:before {
+            content: "•";
+            font-size: 19px;
+            transform: translate(0, -02px);
+        }
+    }
+}
+
+ol {
+    li.wp-block-list {
+        counter-increment: step-counter;
+
+        &:before {
+            content: counter(step-counter) ".";
+            font-family: $mulish;
+            font-style: normal;
+        }
+    }
+}
+
+.bg-dark-mode * {
+    color: c(white);
+}
+
+.is-highlighted-text {
+    font-weight: weight(bold);
+    font-size: 24px;
+    line-height: 1.6;
+    color: c(darkBlue);
+    margin-bottom: 44px;
+}
+
+.is-highlighted-text {
+    font-weight: weight(bold);
+    font-size: 20px;
+    line-height: 1.6;
+    color: c(darkBlue);
+}

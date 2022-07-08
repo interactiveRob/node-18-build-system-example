@@ -1,0 +1,18 @@
+.c-marketing-content {
+    @include pad-edges;
+    max-width: container(970);
+    margin: 3rem auto;
+    text-align: center;
+
+    a {
+        display: block;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin: 3rem auto;
+    }
+}

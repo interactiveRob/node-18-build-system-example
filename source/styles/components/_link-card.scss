@@ -1,0 +1,60 @@
+$padding: 2rem 2.5rem;
+
+.c-link-card {
+    display: block;
+    @include card;
+    @include card-hover;
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(md) {
+        height: 100%;
+        margin-top: 0;
+    }
+
+    &__top {
+        background: linear-gradient(180deg, rgba(247, 249, 249, 0) 0%, #f7f9f9 100%);
+        height: 12.2rem;
+        padding: $padding;
+        padding-top: 2.5rem;
+        text-align: center;
+    }
+
+    &__icon {
+        display: inline-block;
+        height: 7.2rem;
+        width: auto;
+    }
+
+    &__headline {
+        @extend .heading-h3;
+        transition: animate(500);
+    }
+
+    &__descr {
+        @include body-text;
+    }
+
+    &__bottom {
+        padding: $padding;
+    }
+}
+
+/*———— -variants- ————*/
+.c-link-card {
+    &.is-icon-left {
+        .c-link-card {
+            &__top {
+                text-align: left;
+            }
+        }
+    }
+}
+
+/*———— -hover styles- ————*/
+.c-link-card {
+    @include mobile-hover {
+        .c-link-card__headline {
+            color: c(blue);
+        }
+    }
+}

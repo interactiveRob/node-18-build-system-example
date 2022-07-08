@@ -1,0 +1,11 @@
+.c-footer-disclaimer {
+    background-color: c(light-gray);
+
+    &.pt-0 {
+        padding-top: 0;
+    }
+
+    &__content {
+        max-width: container(940);
+    }
+}

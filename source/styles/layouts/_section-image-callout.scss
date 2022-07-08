@@ -1,0 +1,113 @@
+.layout-img-callout {
+    margin-top: 9rem;
+}
+
+.section-img-callout {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+
+    &__text {
+        @include pad-edges;
+        margin-top: 3.5rem;
+        order: 2;
+        @include media-breakpoint-up(md) {
+            margin-top: 0rem;
+            width: 50%;
+            order: 1;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        order: 1;
+
+        @include media-breakpoint-up(md) {
+            width: 50%;
+            position: relative;
+            order: 2;
+        }
+    }
+
+    &__img-frame {
+        position: relative;
+        width: 100%;
+        text-align: right;
+
+        @include media-breakpoint-up(md) {
+            width: 50vw;
+            padding-left: 3rem;
+            text-align: right;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 5rem;
+        }
+
+        img {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 78rem;
+            height: auto;
+        }
+    }
+
+    &.is-img-left {
+        transform: scaleX(-1);
+
+        .section-img-callout__img {
+            img {
+                transform: scaleX(-1);
+            }
+        }
+
+        .section-img-callout__text {
+            transform: scaleX(-1);
+        }
+    }
+
+    &.is-sm-img {
+        .section-img-callout__img-frame img {
+            max-width: 24rem;
+        }
+        @include media-breakpoint-up(md) {
+            .section-img-callout__text {
+                width: 65%;
+            }
+            .section-img-callout__img {
+                width: 35%;
+            }
+            .section-img-callout__img-frame {
+                width: 35vw;
+                padding-right: 0;
+                padding-left: 8rem;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            .section-img-callout__img-frame {
+                padding-left: 12rem;
+
+                img {
+                    max-width: 43rem;
+                }
+            }
+        }
+    }
+
+    &.is-full-width {
+        @include media-breakpoint-up(md) {
+            .section-img-callout__text {
+                width: 65%;
+            }
+            .section-img-callout__img {
+                width: 35%;
+            }
+            .section-img-callout__img-frame {
+                width: 35vw;
+                padding-right: 0;
+                padding-left: 8rem;
+            }
+        }
+    }
+}

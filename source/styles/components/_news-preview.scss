@@ -1,0 +1,15 @@
+.c-news-preview {
+    &__title {
+        color: c(black);
+    }
+
+    &__date {
+        margin-top: 0.8rem;
+        color: c(gray);
+        font-size: 1.4rem;
+    }
+
+    &__link {
+        @include block-link;
+    }
+}

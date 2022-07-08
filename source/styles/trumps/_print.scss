@@ -1,0 +1,43 @@
+@media print {
+    @page {
+        margin: 2cm;
+
+        size: 1200px 11in;
+    }
+
+    body.is-calculator,
+    [data-js='calculator'] {
+        .c-calc-result-box {
+            page-break-inside: avoid !important;
+        }
+
+        [data-print='hide'] {
+            display: none !important;
+        }
+
+        [data-print='show'] {
+            display: block !important;
+        }
+
+        [data-print-width='full'] {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        [class*='btn'] {
+            display: none !important;
+        }
+
+        .container {
+            max-width: 100% !important;
+        }
+    }
+}
+
+@media print and (color) {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

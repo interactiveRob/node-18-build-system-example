@@ -1,0 +1,166 @@
+$padding: 2rem 2.5rem;
+
+.c-tab-group {
+    margin-top: 7rem;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 11rem;
+    }
+
+    &__content {
+        margin-top: 2.3rem;
+    }
+
+    &__nav {
+        position: absolute;
+        padding-right: 8rem;
+        left: 2rem;
+        display: block;
+        text-align: left;
+        white-space: nowrap;
+        max-width: none;
+
+        @include media-breakpoint-up(sm) {
+            padding-right: 0;
+            position: relative;
+            left: auto;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            white-space: normal;
+        }
+
+        &.is-left-aligned {
+            justify-content: flex-start;
+        }
+    }
+
+    &__scroller {
+        position: relative;
+        padding: $padding;
+        min-height: 7.6rem;
+    }
+
+    &__menu {
+        @include card;
+        position: relative;
+        z-index: z(sky);
+        width: 100%;
+        overflow: hidden;
+        background: $gradient-gray-bg;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        &::after {
+            content: "";
+            pointer-events: none;
+            width: 10rem;
+            position: absolute;
+            z-index: z(hill);
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, rgba(247, 249, 249, 0) 12.67%, #f7f9f9 62%);
+        }
+
+        @include media-breakpoint-up(sm) {
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &__menu-item {
+        font-size: 1.5rem;
+        padding: 0;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(sm) {
+            padding: 0 1rem;
+            font-size: 1.7rem;
+        }
+    }
+
+    &__button {
+        position: relative;
+        padding: 0.9rem 2rem;
+        border-radius: 4.5rem;
+        color: c(darkBlue);
+        transition: animate(400);
+        text-align: center;
+
+        > span {
+            line-height: 1;
+            @include absolute-center;
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                line-height: 1.15;
+            }
+        }
+
+        &::before {
+            /* Spaceholder eliminates jump on active state 
+            due to font-weight switch */
+            display: block;
+            content: attr(data-spaceholder);
+            font-weight: weight(black);
+            opacity: 0;
+        }
+
+        @include mobile-hover {
+            background: c(dc);
+            color: c(darkBlue);
+        }
+
+        &.active {
+            font-weight: weight(black);
+            background-color: c(blue);
+
+            color: c(white);
+        }
+    }
+
+    &__info {
+        position: relative;
+    }
+
+    &__page {
+        @include card;
+        padding: $padding;
+        display: none;
+        padding-bottom: 4rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        position: relative;
+        z-index: z(default);
+
+        &.active {
+            display: block;
+        }
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 5rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+    }
+
+    .active {
+        .c-tab-group__page {
+            display: block;
+        }
+        .c-tab-group__disclaimer {
+            display: block;
+        }
+    }
+
+    &__disclaimer {
+        display: none;
+        max-width: 93.8rem;
+        margin: 3.5rem auto 0;
+        color: c(reading);
+        font-size: 1.6rem;
+    }
+}

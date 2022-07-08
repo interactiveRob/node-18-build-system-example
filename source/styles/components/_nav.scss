@@ -1,0 +1,271 @@
+
+.c-nav {
+    position: relative;
+    z-index: z(stratosphere);
+
+    &__bottom {
+        padding: 2rem 0;
+        border-bottom: 0.6rem solid c(blue);
+        transition: border-bottom linear 300ms;
+        position: relative;
+
+        &::before {
+            pointer-events: none;
+            content: "";
+            display: block;
+            @include absolute-cover;
+            z-index: -1;
+            background-color: c(white);
+            transition: opacity linear 300ms;
+            opacity: 1;
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding: 3rem 0 2.5rem;
+        }
+    }
+
+    &__top {
+        padding: 1rem 0 0.9rem;
+        background-color: c(darkBlue);
+        color: c(white);
+    }
+
+    &__meta {
+        margin-right: 3rem;
+        width: 35.7rem;
+        font-size: 1.6rem;
+        font-weight: weight(bold);
+
+        a {
+            @include mobile-hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            white-space: nowrap;
+        }
+    }
+
+    &__container {
+        @include main-nav-container();
+    }
+
+    &__flex {
+        display: flex;
+        width: 100%;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: block;
+        color: c(darkBlue);
+        svg {
+            width: 11.5rem;
+            height: 3rem;
+
+            @include media-breakpoint-up(lg) {
+                width: 14rem;
+                height: 3.65rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 18.7rem;
+                height: 4.8rem;
+            }
+        }
+
+        @include mobile-hover {
+            color: c(navy);
+        }
+    }
+
+    &__menu {
+        display: none;
+        width: 100%;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+        }
+
+        [data-js="search-trigger"] {
+            margin-left: 4rem;
+            color: c(darkBlue);
+            transition: animate(400);
+
+            svg {
+                width: 3rem;
+                height: 3.1rem;
+            }
+
+            @include mobile-hover {
+                color: c(blue);
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+        }
+
+        .menu-item {
+            font-weight: weight(black);
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            margin: 0.5rem 0;
+
+            > a {
+                @include mobile-hover {
+                    color: c(blue);
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                font-size: 1.8rem;
+            }
+
+            @include media-breakpoint-up(xl) {
+
+                &.current-menu-ancestor,
+                &.current-menu-parent,
+                &.current-menu-item {
+                    color: c(blue);
+                }
+            }            
+        }
+
+        .menu-item.is-top-level {
+
+            @include media-breakpoint-up(xl) {
+
+                border-top: 0.4rem solid transparent;
+                border-bottom: 0.4rem solid transparent;
+
+                &.current-menu-ancestor,
+                &.current-menu-parent,
+                &.current-menu-item {
+                    border-bottom-color: c(blue);
+                }
+            }
+
+            & + .menu-item {
+                margin-left: 2.5rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-left: 3.7rem;
+                }
+            }
+        }
+
+        .sub-menu[data-depth="2"] {
+            .menu-item {
+
+                > a {
+                    @include mobile-hover {
+                        font-weight: weight(bold);
+                    }
+                }
+
+                @include media-breakpoint-up(xl) {
+                
+                    &.current-menu-ancestor,
+                    &.current-menu-parent,
+                    &.current-menu-item {
+                        font-weight: weight(bold);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.c-nav {
+    @import "mega-menu";
+}
+
+/*———— -variants- ————*/
+.c-nav__bottom {
+    //default
+    .menu-item {
+        color: c(darkBlue);
+    }
+
+    //transparent
+    &.is-transparent {
+        @include media-breakpoint-up(xl) {
+            margin-bottom: calc(var(--nav-height) * -1);
+
+            &:not(.js-is-active) {
+                border-bottom-color: transparent;
+                &::before {
+                    opacity: 0;
+                }
+
+                [data-js="search-trigger"],
+                .c-nav__logo {
+                    color: c(white);
+
+                    @include mobile-hover {
+                        color: c(blueTint);
+                    }
+                }
+
+                .menu-item.is-top-level {
+                    color: c(white);
+                    @include mobile-hover {
+                        > a {
+                            color: c(blueTint);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.c-nav__top {
+    display: none;
+
+    @include media-breakpoint-up(xl) {
+        display: block;
+    }
+
+    [data-js="login-trigger"] {
+        margin-left: 3.7rem;
+        min-width: 12.5rem;
+    }
+    .menu .menu-item {
+        font-size: 1.6rem;
+        font-weight: weight(bold);
+        color: c(white);
+        opacity: 1;
+        transition: opacity 400ms;
+
+        @include mobile-hover {
+            color: c(white);
+            text-decoration: underline;
+
+            > a {
+                color: c(white);
+            }
+        }
+
+        & + .menu-item {
+            margin-left: 2.5rem;
+
+            @include media-breakpoint-up(lg) {
+                margin-left: 3.7rem;
+            }
+        }
+    }
+}

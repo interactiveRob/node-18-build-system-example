@@ -1,0 +1,29 @@
+.c-page-intro {
+    &__buttons {
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        flex-basis: auto;
+
+        @include media-breakpoint-up(sm) {
+            flex-flow: row nowrap;
+        }
+
+        .c-btn {
+            min-width: 51%;
+            @include media-breakpoint-up(sm) {
+                min-width: 0px;
+            }
+        }
+
+        .c-btn + .c-btn {
+            margin-top: 2rem;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 0;
+                margin-left: 4rem;
+            }
+        }
+    }
+}

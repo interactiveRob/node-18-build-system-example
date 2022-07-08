@@ -1,0 +1,45 @@
+.c-svg {
+    &.is-play-icon {
+        width: 5.8rem;
+        height: 5.8rem;
+    }
+
+    &.is-apple {
+        width: 2.7rem;
+        height: 3.2rem;
+    }
+
+    &.is-android {
+        width: 3.4rem;
+        height: 1.9rem;
+    }
+
+    &.is-checkmark {
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    &.is-facebook {
+        width: 1.2rem;
+        height: 2.6rem;
+    }
+
+    &.is-twitter {
+        width: 2.3rem;
+        height: 1.9rem;
+    }
+
+    &.is-instagram {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+    &.is-linkedin {
+        width: 2.5rem;
+        height: 2.4rem;
+    }
+    &.is-youtube {
+        width: 2.9rem;
+        height: 2.1rem;
+    }
+}

@@ -1,0 +1,17 @@
+.c-tiers-table {
+    margin-top: 4rem;
+    @include card;
+
+    &__cell-text {
+        width: 100%;
+    }
+
+    .c-tiers-table__final {
+        padding: 3rem 1rem;
+    }
+
+    .is-checkmark {
+        display: block;
+        margin: 0 auto;
+    }
+}

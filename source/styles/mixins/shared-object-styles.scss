@@ -1,0 +1,32 @@
+@mixin card {
+    background: #ffffff;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+@mixin card-hover {
+    position: relative;
+    z-index: z(land);
+
+    &::after {
+        content: "";
+        border-radius: 5px;
+        position: absolute;
+        z-index: z(sea);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity linear 250ms;
+    }
+
+    @include mobile-hover {
+        box-shadow: none;
+        &::after {
+            opacity: 1;
+        }
+    }
+}

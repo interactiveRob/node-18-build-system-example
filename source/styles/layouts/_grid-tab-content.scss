@@ -1,0 +1,25 @@
+.grid-tab-content {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+        justify-content: flex-start;
+    }
+
+    &__half {
+        width: 100%;
+        & + & {
+            margin-top: 6rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 2.5rem;
+            & + & {
+                margin-top: 2.5rem;
+            }
+            width: calc(50% - 7rem);
+        }
+    }
+}

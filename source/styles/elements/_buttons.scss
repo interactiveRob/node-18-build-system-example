@@ -1,0 +1,188 @@
+.c-btn {
+    display: inline-block;
+    border: 2px solid c(primary);
+    color: c(white);
+    cursor: pointer;
+    background-color: c(primary);
+    border-radius: 5rem;
+    font-family: $mulish;
+    font-size: 1.9rem;
+    font-weight: weight(black);
+    line-height: 1;
+    padding: 1.1rem 3.4rem;
+    vertical-align: bottom;
+    text-align: center;
+    transition: all ease 400ms;
+    text-transform: uppercase;
+
+    @include mobile-hover {
+        color: c(primary);
+        background: transparent;
+    }
+
+    @include media(">=768px") {
+
+        > span {
+        }
+    }
+
+    &__content-after {
+        margin-left: 1.5rem;
+    }
+
+    &:active {
+        transform: translate(0px, 2px);
+        -webkit-transform: translate(0px, 2px);
+    }
+
+    &.is-full {
+        width: 100%;
+    }
+
+    &.is-reverse {
+        background-color: c(white);
+        border-color: c(white);
+        color: c(primary);
+
+        @include mobile-hover {
+            color: c(white);
+            background-color: c(primary);
+            border-color: c(primary);
+        }
+    }
+
+    &.is-outline {
+        color: c(primary);
+        background: transparent;
+        border: 2px solid c(primary);
+
+        @include mobile-hover {
+            background-color: c(primary);
+            color: c(white);
+        }
+    }
+
+    &.is-outline-blue {
+        color: c(blue);
+        background: transparent;
+        border: 2px solid c(blue);
+
+        @include mobile-hover {
+            background-color: c(blue);
+            color: c(white);
+        }
+    }
+
+    &.is-outline-reverse {
+        color: c(white);
+        background: transparent;
+        border: 2px solid c(white);
+
+        @include mobile-hover {
+            background: c(white);
+            color: c(primary);
+            border-color: c(white);
+        }
+    }
+
+    &.is-light {
+        background: c(white);
+        color: c(blue);
+        border-color: c(white);
+
+        @include mobile-hover {
+            background: transparent;
+            border: 2px solid c(white);
+            color: c(white);
+        }
+    }
+
+    &.is-secondary {
+        background: c(blue);
+        color: c(white);
+        border-color: c(blue);
+
+        @include mobile-hover {
+            background: transparent;
+            border: 2px solid c(blue);
+            color: c(blue);
+        }
+
+        &.has-white-hover {
+            @include mobile-hover {
+                border-color: c(white);
+                color: c(white);
+            }
+        }
+    }
+
+    &.has-solid-hover {
+        @include mobile-hover {
+            background-color: c(white);
+            border-color: c(white);
+            color: currentColor;
+        }
+    }
+
+    &.is-blue {
+        background: c(blue);
+        color: c(white);
+        border-color: c(blue);
+
+        @include mobile-hover {
+            background: transparent;
+            border: 2px solid c(blue);
+            color: c(blue);
+        }
+    }
+
+    &.is-transparent {
+        background: transparent;
+        border: 2px solid transparent;
+        color: c(navy);
+
+        @include mobile-hover {
+            background: c(dc);
+            border: 2px solid c(dc);
+            color: c(navy);
+        }
+    }
+
+    &.is-custom {
+        color: var(--custom-color);
+
+        @include mobile-hover {
+            color: c(white);
+            background: var(--custom-color);
+            border-color: var(--custom-color);
+        }
+    }
+
+    &.is-small {
+        font-size: 1.6rem;
+        padding: 0.8rem 2rem;
+
+        .c-btn__content-after {
+            margin-left: 1.2rem;
+        }
+
+        > span {
+            position: relative;
+        }
+    }
+
+    &.is-tiny {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+    }
+
+    &.has-content {
+        display: inline-flex;
+        align-items: center;
+        flex-flow: row nowrap;
+    }
+
+    > span {
+        position: relative;
+    }
+}

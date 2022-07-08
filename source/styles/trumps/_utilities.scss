@@ -1,0 +1,126 @@
+.bg-cover {
+    background-size: cover !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.pointer-events-none {
+    pointer-events: none !important;
+}
+
+.pointer-events-all {
+    pointer-events: all !important;
+}
+
+.bg-center {
+    background-position: center;
+}
+
+.boundary {
+    position: absolute;
+    overflow-x: hidden;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    pointer-events: none;
+
+    @include media(">1024px") {
+        overflow: visible;
+    }
+}
+
+.sticky {
+    position: fixed;
+}
+
+@each $label, $z-index in $z-indexes {
+    $_label: "" + $label;
+    .z-#{$_label} {
+        z-index: $z-index !important;
+    }
+}
+
+@each $label, $color in $colors {
+    $_label: "" + $label;
+    .border-#{$_label} {
+        border-color: $color !important;
+    }
+
+    .bg-#{$_label} {
+        background-color: $color !important;
+    }
+
+    .text-#{$_label} {
+        color: $color !important;
+    }
+}
+
+.d-block {
+    display: block !important;
+}
+
+.mx-auto {
+    margin: 0 auto !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.h-video {
+    display: flex !important;
+    flex-flow: row nowrap;
+
+    iframe {
+        height: 100%;
+    }
+}
+
+.h-video::after {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+}
+
+.js-no-transition {
+    transition-duration: 0ms;
+}
+
+.mobile-hide {
+    @include media("<480px") {
+        display: none;
+    }
+}
+
+.desktop-hide {
+    @include media(">=480px") {
+        display: none;
+    }
+}
+
+.padded-edges {
+    @include pad-edges;
+}
+
+.viewport-boundary {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.text-link {
+    @include text-link;
+}

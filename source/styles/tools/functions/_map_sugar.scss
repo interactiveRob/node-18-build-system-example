@@ -1,0 +1,33 @@
+@function map-sugar($map, $key) {
+    $expected: "" + $key;
+    @if not map-has-key($map, $expected) {
+        @error 'There is no layer named `#{$key}` in the map. '
+            + 'Key should be one of #{map-keys($map)}.';
+    }
+
+    @return map-get($map, $expected);
+}
+
+@function c($key) {
+    @return map-sugar($colors, $key);
+}
+
+@function dir($key) {
+    @return map-sugar($directories, $key);
+}
+
+@function weight($key) {
+    @return map-sugar($widths, $key);
+}
+
+@function z($key) {
+    @return map-sugar($z-indexes, $key);
+}
+
+@function weight($key) {
+    @return map-sugar($weights, $key);
+}
+
+@function animate($key) {
+    @return map-sugar($animations, $key);
+}

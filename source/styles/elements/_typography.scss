@@ -1,0 +1,313 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    font-family: $mulish;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $mulish;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bolder;
+}
+
+.heading-h1 {
+    color: c(primary);
+    font-size: 4.8rem;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=365px") {
+        font-size: 5.2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: 6rem;
+    }
+}
+
+.heading-h2 {
+    color: c(primary);
+    font-size: 4.2rem;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 4.8rem;
+    }
+}
+
+.heading-h3 {
+    color: c(primary);
+    font-size: 3.2rem;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 3.2rem;
+    }
+}
+
+.heading-h4 {
+    color: c(primary);
+    font-size: 2rem;
+    line-height: 1.16;
+    font-weight: weight(black);
+
+    @include media(">=768px") {
+        font-size: 2.4rem;
+    }
+}
+
+.heading-h5 {
+    font-size: 1.8rem;
+    font-weight: weight(black);
+}
+
+.heading-h6 {
+    font-size: 1.6rem;
+    font-weight: weight(black);
+}
+
+p {
+    margin: 0;
+}
+
+pre {
+    font-family: $mulish;
+}
+
+.bg-dark-mode {
+    color: c(white);
+}
+
+blockquote {
+    margin: 0;
+}
+
+.rich-text {
+    //rich text area styles
+
+    a:not(.c-btn):not(.button):not(.ignore-link-style) {
+        @include text-link;
+    }
+
+    h1 {
+        @extend .heading-h1;
+    }
+
+    h2 {
+        @extend .heading-h2;
+    }
+
+    h3 {
+        @extend .heading-h3;
+    }
+
+    h4 {
+        @extend .heading-h4;
+    }
+
+    h5 {
+        @extend .heading-h5;
+    }
+
+    h6 {
+        @extend .heading-h6;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 1.7rem;
+    }
+
+    * + p {
+        margin-top: 2.1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &:not(:first-child) {
+            margin-top: 3.5rem;
+
+            @include media(">=1024px") {
+                margin-top: 4.4rem;
+            }
+        }
+    }
+
+    p,
+    ul,
+    li {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+
+    blockquote {
+        margin: 4rem 0;
+        padding-left: 4rem;
+
+        a:active {
+            color: c(gray);
+        }
+
+        @include media(">=1024px") {
+            padding-left: 8rem;
+
+            a:hover {
+                color: c(gray);
+            }
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.16rem;
+            border-right: 0.8rem solid c(primary);
+
+            @include media(">=1024px") {
+                left: 3.2rem;
+            }
+        }
+
+        position: relative;
+    }
+
+    blockquote,
+    blockquote p {
+        font-weight: weight(semi-bold);
+        color: c(primary);
+        font-size: 1.8rem;
+        line-height: 2;
+        position: relative;
+        @include media(">=768px") {
+            font-size: 2.2rem;
+        }
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    ul,
+    ol {
+        list-style: none;
+        padding: 0 0 0 0;
+        margin-top: 2rem;
+        margin-bottom: -1rem;
+
+        li:not(.menu-item) {
+            display: block;
+            width: 100%;
+            flex-flow: row nowrap;
+            align-items: flex-start;
+            padding-left: 2.7rem;
+            padding-bottom: 1.4rem;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                top: 0.1rem;
+                left: 1rem;
+                content: "";
+                color: c(reading);
+                display: inline-block;
+                height: 10px;
+            }
+        }
+    }
+
+    ul {
+        li:not(.menu-item) {
+            &:before {
+                content: "•";
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    ol {
+        li:not(.menu-item) {
+            counter-increment: step-counter;
+
+            &:before {
+                content: counter(step-counter) ".";
+                font-family: $mulish;
+                font-style: normal;
+            }
+        }
+    }
+
+    .bg-dark-mode * {
+        color: c(white);
+    }
+
+    .is-highlighted-text {
+        font-weight: weight(bold);
+        font-size: 2.4rem;
+        line-height: 1.6;
+        color: c(darkBlue);
+        margin-bottom: 4.4rem;
+    }
+}
+
+.text-link {
+    text-decoration: underline;
+}
+
+.text-link-dark {
+    @include text-link-dark;
+}
+
+.text {
+    &-left {
+        text-align: left !important;
+    }
+
+    &-center {
+        text-align: center !important;
+    }
+
+    &-right {
+        text-align: right !important;
+    }
+}
+
+a[data-js] {
+    cursor: pointer;
+}
+
+// Removing because it doesn't seem to be in use
+// div sup {
+//     position: relative;
+//     top: -1.1em;
+//     left: 0.6em;
+//     font-size: 2.7rem;
+//     font-weight: weight(black);
+// }
+
+.text-rate-unit {
+    font-size: 3rem;
+    @include media-breakpoint-up(md) {
+        font-size: inherit;
+    }
+}

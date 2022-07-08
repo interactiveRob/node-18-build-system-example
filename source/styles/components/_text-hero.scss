@@ -1,0 +1,59 @@
+.c-text-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 10rem 0 10.2rem;
+    background-color: c(darkBlue);
+    text-align: center;
+    @include pad-edges;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 20rem;
+        padding-bottom: 20rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        text-align: left;
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+
+    &.is-narrow {
+        @include media-breakpoint-up(lg) {
+            text-align: center;
+            padding-top: 10rem;
+            padding-bottom: 10.2rem;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: z(hill);
+    }
+
+    &__graphic {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 25.5rem;
+        height: 37.5rem;
+        color: #2c8ebf;
+
+        @include media-breakpoint-up(md) {
+            width: 38rem;
+            height: 56.5rem;
+            top: -5rem;
+            left: -4rem;
+        }
+    }
+
+    &__headline {
+        @include media(">=365px") {
+            font-size: 5.2rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 6rem;
+        }
+    }
+}

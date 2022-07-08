@@ -1,0 +1,42 @@
+.c-icon-list {
+    max-width: container(910);
+
+    &__item {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        @include media-breakpoint-up(md) {
+            flex-flow: row nowrap;
+        }
+
+        & + & {
+            margin-top: 4rem;
+        }
+    }
+
+    &__item-image {
+        width: 15rem;
+        @include media-breakpoint-up(md) {
+            text-align: center;
+        }
+
+        img {
+            width: 8.5rem;
+            height: auto;
+            display: inline-block;
+        }
+    }
+
+    &__item-content {
+        width: 100%;
+        margin-top: 2rem;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            margin-left: 4.2rem;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.grid-link-cards {
+
+    $column-margin: 2rem;
+
+    margin-top: 4rem;
+
+    .row {
+        margin-bottom: -$column-margin;
+
+        > div {
+            margin-bottom: $column-margin;
+        }
+    }
+
+    &__adjust {
+        margin-top: -2rem;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+
+    @include media(">=330px") {
+        padding: 0 2rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+        padding: 0;
+    }
+}

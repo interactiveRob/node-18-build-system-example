@@ -1,0 +1,34 @@
+.c-sidebar {
+    display: inline-block;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        max-width: 25.6rem;
+    }
+
+    &.is-full-width {
+        max-width: none;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 3rem;
+        }
+
+        .c-sidebar__region {
+            margin-bottom: 4.5rem;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 5.5rem;
+            }
+        }
+    }
+
+    &__region {
+        margin-bottom: 6rem;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 8rem;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

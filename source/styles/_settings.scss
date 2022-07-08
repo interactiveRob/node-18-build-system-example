@@ -1,0 +1,60 @@
+@import "tools/functions/map_sugar";
+/*———— -Typefaces etc- ————*/
+
+$mulish: "Mulish", "Arial", "Helvetica", "sans-serif";
+
+$weights: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    bold: 700,
+    extra-bold: 800,
+    "black": 900,
+);
+
+$rem-base: 62.5%;
+
+/*———— -Z-indices- ————*/
+$z-indexes: (
+    outer-space: 300,
+    stratosphere: 200,
+    sky: 100,
+    mountain: 50,
+    hill: 10,
+    land: 5,
+    default: 1,
+    sea: -1,
+);
+
+/*———— -Colors- ————*/
+$colors: (
+    "black": #000000,
+    "white": #ffffff,
+    "darkBlue": #002956,
+    "navy": #1a3679,
+    "blue": #2c8ebf,
+    "blueTint": #c0ddec,
+    "dc": #dcdcdc,
+    "gray": #4f5656,
+    "grey": #4f5656,
+    "input-bg": #efefef,
+    "medium-gray": #c9d1d1,
+    "light-gray": #f7f9f9,
+    "reading": #4f5656,
+    "primary": #002956,
+);
+
+/*———— -Gradients- ————*/
+
+$gradient-gray-bg: linear-gradient(180deg, rgba(247, 249, 249, 0) 0%, #f7f9f9 100%);
+
+/*———— -Shadow- ————*/
+
+/*———— -Spacing- ————*/
+$edge-padding: 12px;
+
+/*———— -Animación- ————*/
+@function animate($duration) {
+    @return all ease $duration + ms;
+}

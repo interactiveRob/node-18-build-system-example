@@ -1,0 +1,15 @@
+@mixin logo-press {
+    transform-origin: center center;
+    transition: animate(500);
+    backface-visibility: hidden;
+
+    @include media(">1024px") {
+        &:hover {
+            color: c(blue);
+        }
+    }
+
+    &:active {
+        transform: translate3d(0, 0, 0) scale(0.95);
+    }
+}

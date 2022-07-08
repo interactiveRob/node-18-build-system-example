@@ -1,0 +1,100 @@
+.cu-search-modal {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    height: calc(100vh - 90px);
+    z-index: z(outer-space);
+
+    @include media-breakpoint-up(lg) {
+        height: 0px;
+    }
+    &__close {
+        position: absolute;
+        top: 0.9rem;
+        right: 1.7rem;
+        color: c(darkBlue);
+        transition: opacity linear 300ms;
+
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+
+        @include mobile-hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        @include card;
+        border-radius: 0;
+        padding: 3rem 1.5rem 1.6rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 3.5rem 1.5rem 1.6rem;
+            width: auto;
+            bottom: auto;
+            left: auto;
+        }
+    }
+
+    button[type="submit"] {
+        position: absolute;
+        z-index: 2;
+        padding: 0 0.5rem;
+        padding-right: 0;
+        right: 2.1rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    svg.is-search {
+        position: relative;
+        top: 1rem;
+        width: 2.8rem;
+        height: 2.5rem;
+    }
+}
+
+[data-js="search-modal"] {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity linear 300ms;
+
+    @include media-breakpoint-up(lg) {
+        &.js-is-staged {
+            display: block;
+        }
+    }
+
+    &.js-is-active {
+        opacity: 1;
+
+        .cu-search-modal__container {
+            pointer-events: all;
+        }
+    }
+}
+
+.cu-search-modal__container-in-page {
+    padding: 1.8rem 1.5rem 1.6rem;
+    width: auto;
+    bottom: auto;
+    left: auto;
+    background-color: c(blue);
+    max-width: 310px;
+}
+
+.home {
+    .cu-search-modal__container {
+        top: var(--top-bar-height);
+    }
+}

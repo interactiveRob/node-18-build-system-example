@@ -1,0 +1,167 @@
+.cu-login-form {
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    max-width: 137rem;
+    height: calc(100vh - var(--nav-height));
+    z-index: z(outer-space);
+    text-align: left;
+
+    @include media-breakpoint-up(lg) {
+        top: 0;
+        height: auto;
+    }
+
+    &__close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        color: c(darkBlue);
+        transition: opacity linear 300ms;
+
+        svg {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        @include mobile-hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__heading {
+        color: c(darkBlue);
+        margin-bottom: 2rem;
+        font-size: 2.4rem;
+        font-weight: weight(black);
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 65rem;
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 4.8rem 3rem 2.7rem;
+        @include card;
+        border-radius: 0;
+
+        @include media-breakpoint-up(lg) {
+            padding: 4rem 3rem 3.2rem;
+            width: auto;
+            bottom: auto;
+            left: auto;
+        }
+    }
+
+    &__field {
+        width: 100%;
+
+        & + & {
+            margin-top: 1rem;
+        }
+
+        &.is-button {
+            margin-top: 1.7rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+            width: 35.33%;
+
+            & + & {
+                margin-top: 0;
+                margin-left: 3rem;
+            }
+
+            &.is-button {
+                position: relative;
+                top: 2.1rem;
+                width: 11rem;
+                text-align: left;
+                padding-right: 0;
+            }
+        }
+    }
+
+    &__link {
+        margin-top: 1.2rem;
+        display: block;
+        font-size: 1.2rem;
+
+        a {
+            color: currentColor;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    label {
+        font-size: 1.6rem;
+        font-weight: bold;
+        display: block;
+        color: c(darkBlue);
+        margin-bottom: 0.5rem;
+    }
+
+    input:not([type="submit"]) {
+        width: 100%;
+        display: block;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+        background-color: #efefef;
+        border: 1px solid c(medium-gray);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    button[type="submit"] {
+        position: relative;
+        min-width: 0;
+    }
+}
+
+[data-js="login-form"] {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity linear 300ms;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+    &.js-is-active {
+        display: block;
+        opacity: 1;
+
+        .cu-login-form__container {
+            pointer-events: all;
+        }
+    }
+}
+
+.home {
+    .cu-login-form {
+        top: var(--top-bar-height);
+    }
+}

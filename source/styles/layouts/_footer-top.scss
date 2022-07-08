@@ -1,0 +1,12 @@
+.layout-footer-top {
+    background-color: c(light-gray);
+    padding: 8rem 0 0;
+
+    &.is-home {
+        padding-top: 11rem;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 19rem;
+        }
+    }
+}

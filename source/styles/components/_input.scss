@@ -1,0 +1,37 @@
+.c-input {
+    line-height: 1.2;
+    font-size: 1.6rem;
+    color: c(reading);
+    background-color: c(white);
+    padding: 0.8rem 1rem 0.9rem;
+    border-radius: 1rem;
+    border: 1px solid #aebaba;
+
+    &.is-dropdown {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    &__select {
+        position: relative;
+
+        &:after {
+            position: absolute;
+            content: "";
+            pointer-events: none;
+            height: 1rem;
+            right: 1rem;
+            top: 55%;
+            transform: translateY(-50%);
+            z-index: z(hill);
+            border-top: solid 0.7rem #7b8787;
+            border-left: solid 0.7rem transparent;
+            border-right: solid 0.7rem transparent;
+            display: inline-block;
+        }
+    }
+}

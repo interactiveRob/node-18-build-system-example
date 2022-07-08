@@ -1,0 +1,11 @@
+.modal-box .modal-content .btn {
+    @extend .c-btn;
+}
+
+.modal-box .close {
+    line-height: 48px;
+}
+
+.c-custom-button {
+    margin-bottom: 20px;
+}
